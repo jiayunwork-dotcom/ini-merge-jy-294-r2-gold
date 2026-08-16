@@ -36,7 +36,7 @@ func Parse(r io.Reader) (*File, error) {
 		}
 	}
 	sc := bufio.NewScanner(br)
-	out := &File{}
+	out := &File{Sections: []Section{}}
 	var cur *Section
 	lineNo := 0
 	for sc.Scan() {
